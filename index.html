@@ -7,19 +7,20 @@
     <meta http-equiv="refresh" content="10">
     <title>Stasiun Cuaca Lokal</title>
     <style>
-        body { font-family: sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
-        h1 { color: #333; }
-        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .metric { background-color: #e9f5ff; padding: 20px; border-radius: 8px; }
-        .metric h2 { margin: 0; color: #555; font-size: 1.2em; }
-        .metric p { margin: 5px 0 0; font-size: 2em; font-weight: bold; color: #0056b3; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+        .container { background-color: white; padding: 20px 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; width: 100%; max-width: 600px; }
+        h1 { color: #333; font-weight: 600; }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .metric { background-color: #fafafa; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
+        .metric h2 { margin: 0; color: #555; font-size: 1.1em; font-weight: 500; }
+        .metric p { margin: 8px 0 0; font-size: 2.2em; font-weight: bold; color: #0056b3; }
+        .footer { margin-top: 30px; font-size: 0.8em; color: #aaa; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>📊 Stasiun Cuaca Raspberry Pi</h1>
-        <p>Data terakhir yang diterima:</p>
+        <p>Lokasi: Bandar Lampung</p>
         <div class="data-grid">
             <div class="metric">
                 <h2>🌡️ Suhu</h2>
@@ -38,7 +39,7 @@
                 <p>{{ data.wind_direction }}</p>
             </div>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8em; color: #888;">Halaman ini akan refresh otomatis setiap 10 detik.</p>
+        <p class="footer">Halaman ini refresh otomatis setiap 10 detik.</p>
     </div>
 </body>
 </html>
