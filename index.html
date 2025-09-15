@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10">
+    <title>Stasiun Cuaca Lokal</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+        .container { background-color: white; padding: 20px 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; width: 100%; max-width: 600px; }
+        h1 { color: #333; font-weight: 600; }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .metric { background-color: #fafafa; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
+        .metric h2 { margin: 0; color: #555; font-size: 1.1em; font-weight: 500; }
+        .metric p { margin: 8px 0 0; font-size: 2.2em; font-weight: bold; color: #0056b3; }
+        .footer { margin-top: 30px; font-size: 0.8em; color: #aaa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Stasiun Cuaca Raspberry Pi</h1>
+        <p>Lokasi: Bandar Lampung</p>
+        <div class="data-grid">
+            <div class="metric">
+                <h2>🌡️ Suhu</h2>
+                <p>{{ data.temperature }} &deg;C</p>
+            </div>
+            <div class="metric">
+                <h2>💧 Kelembaban</h2>
+                <p>{{ data.humidity }} %</p>
+            </div>
+            <div class="metric">
+                <h2>💨 Kecepatan Angin</h2>
+                <p>{{ data.wind_speed_kph }} kph</p>
+            </div>
+            <div class="metric">
+                <h2>🧭 Arah Angin</h2>
+                <p>{{ data.wind_direction }}</p>
+            </div>
+        </div>
+        <p class="footer">Halaman ini refresh otomatis setiap 10 detik.</p>
+    </div>
+</body>
+</html>
